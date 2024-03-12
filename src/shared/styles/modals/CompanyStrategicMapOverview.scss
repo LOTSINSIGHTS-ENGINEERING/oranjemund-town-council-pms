@@ -1,0 +1,68 @@
+.strategic-map-objective {
+  .strategic-map-overview {
+    .sub-heading {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: stretch;
+
+      .kpis-table {
+        th {
+          font-weight: $font-weight-semibold;
+          font-size: $font-size;
+          text-transform: capitalize;
+          padding: 5px 8px;
+        }
+        td {
+          font-size: $font-size;
+          padding: 5px 8px;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+
+          &.kpi-name,
+          &.kpi-owner {
+            font-weight: $font-weight-semibold;
+          }
+          &.kpi-actual {
+            font-weight: $font-weight-semibold;
+            white-space: nowrap;
+            .icon {
+              background-color: transparent !important;
+            }
+            .red {
+              color: $danger-color;
+            }
+            .green {
+              color: $success-color;
+            }
+            .warning {
+              color: $warning-color;
+            }
+          }
+          &.kpi-target {
+            font-weight: $font-weight-semibold;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .contributory-objectives {
+    .heading {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      margin-top: 20px;
+    }
+    .sub-heading {
+      font-size: $font-size;
+      font-weight: $font-weight;
+      span {
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+}

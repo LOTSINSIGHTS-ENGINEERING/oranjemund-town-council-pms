@@ -1,0 +1,288 @@
+.scorecard-page {
+  .step {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: $white-color;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+    &--stage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: left;
+      min-width: 100px;
+      width: 100%;
+      background: none;
+      outline: 0;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-bottom: 2px solid #fafafa;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        border-bottom: 2px solid $primary-color;
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+
+        .step--stage__bubble {
+          color: $white-color;
+        }
+      }
+
+      &__bubble {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border: 4px solid $primary-color;
+        background-color: $primary-color;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease-in-out;
+
+        &__content {
+          color: $white-color;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -10px;
+          border: 3px solid transparent;
+          border-radius: 50%;
+          background: none;
+          z-index: 0;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      &__content {
+        position: relative;
+
+        .label {
+          font-size: $font-size-xs;
+          font-weight: $font-weight-semibold;
+          text-transform: uppercase;
+          line-height: 1;
+          color: $black-color;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+
+        .title {
+          font-size: $font-size;
+          font-weight: $font-weight-semibold;
+          line-height: 1;
+          margin-top: 0px;
+          margin-bottom: 5px;
+          color: $black-color;
+        }
+      }
+
+      &__open {
+        background-color: #e4eefd !important;
+        border-bottom: 2px $primary-color solid;
+      }
+
+      &__in-progress {
+        background-color: #e4eefd;
+
+        .step--stage__bubble {
+          color: $white-color;
+          border: 4px solid $warning-color;
+          background-color: $warning-color;
+
+          &::before {
+            border-color: $warning-color;
+          }
+        }
+      }
+
+      &__submitted {
+        background-color: #e4eefd;
+
+        .step--stage__bubble {
+          color: $white-color;
+          border: 4px solid $primary-color;
+          background-color: $primary-color;
+
+          &::before {
+            border-color: #65a1f2;
+          }
+        }
+      }
+
+      &__completed,
+      &__approved {
+        background-color: #e9fbeb;
+
+        .step--stage__bubble {
+          color: $white-color;
+          border: 4px solid $success-color;
+          background-color: $success-color;
+        }
+      }
+
+      &__pending {
+        background-color: #f8f8f9;
+
+        .step--stage__bubble {
+          color: $white-color;
+          border: 4px solid $grey-color;
+          background-color: $grey-color;
+        }
+      }
+    }
+  }
+
+  .objective {
+    position: relative;
+    background-color: $white-color !important;
+    border: 2px solid #fafafa;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      border: 2px solid $primary-color;
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .objective-action-dropdown {
+      padding: 0.5em;
+
+      li {
+        &:hover {
+          background-color: $muted-color;
+          font-weight: $font-weight-semibold;
+
+          button {
+            color: $black-color;
+          }
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          width: 100%;
+          text-align: left;
+          padding: 0.5em;
+          color: $grey-color;
+        }
+      }
+    }
+
+    .objective-name {
+      position: relative;
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      line-height: 1;
+      margin: 0;
+
+      .objective-persepctive,
+      .objective-weight {
+        font-size: $font-size-xs;
+        text-transform: uppercase;
+        color: $white-color;
+        background-color: $primary-color;
+        padding: 3px 5px;
+        line-height: 1;
+        width: fit-content;
+      }
+
+      .objective-weight {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .measure-table {
+    overflow-y: auto;
+
+    .header {
+      th {
+        font-weight: $font-weight-semibold;
+        text-transform: none;
+        white-space: nowrap;
+        font-size: $font-size;
+      }
+    }
+
+    .row {
+      cursor: pointer;
+
+      td {
+        font-size: $font-size;
+      }
+
+      .controls {
+        white-space: nowrap;
+      }
+
+      .status {
+        height: 10px;
+        width: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+
+      .red {
+        background-color: $danger-color;
+      }
+
+      .warning {
+        background-color: $warning-color;
+      }
+
+      .green {
+        background-color: $success-color;
+      }
+
+      .actual-value {
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+
+  .no-measures {
+    padding: 1em;
+
+    p {
+      font-size: 1rem;
+      line-height: 0.5em;
+      margin: 0;
+      color: $grey-color;
+
+      span {
+        font-style: normal;
+      }
+    }
+  }
+
+  .kit-dropdown {
+    .icon {
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 10px;
+
+      &--muted {
+        background-color: $primary-color;
+        color: $white-color;
+      }
+
+      &--warning {
+        background-color: $warning-color;
+        color: $white-color;
+      }
+
+      &--success {
+        background-color: $success-color;
+        color: $white-color;
+      }
+    }
+  }
+}

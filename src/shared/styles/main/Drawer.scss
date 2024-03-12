@@ -1,0 +1,89 @@
+.fixed-drawer {
+  height: 100%;
+  padding-top: 15px;
+  background: $white-color;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.01), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.drawer-content {
+  .account-settings {
+    padding: 5px 20px;
+    border-radius: $border-radius;
+
+    img {
+      object-fit: contain;
+      -o-object-fit: contain;
+      object-position: center center;
+      -o-object-position: center center;
+      padding: 10px;
+    }
+  }
+
+  .drawer-list {
+    ul.main-list {
+      list-style: none;
+      margin: 0;
+
+      .list-item {
+        margin-bottom: 4px;
+        overflow: hidden;
+
+        &.uk-parent.uk-open {
+          background-color: $white-color;
+
+          .down-arrow {
+            position: absolute;
+            right: 5px;
+            transform: rotate(180deg);
+          }
+        }
+
+        .navlink {
+          position: relative;
+          padding: 0.4em 0.5em;
+          font-size: $font-size;
+          transition: 0.3s ease-in-out all;
+          color: $secondary-color;
+          font-weight: $font-weight-semibold;
+
+          .down-arrow {
+            position: absolute;
+            right: 5px;
+            top: 8px;
+            transition: transform 0.3s ease-in-out;
+          }
+        }
+
+        .active {
+          background-color: $primary-color;
+          color: $white-color;
+        }
+
+        .uk-nav-sub {
+          padding: 5px 0 5px 0px;
+
+          .navlink {
+            border-left: 4px solid transparent;
+          }
+
+          .active {
+            border-left: 4px solid $accent-color !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.uk-offcanvas-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -270px;
+  box-sizing: border-box;
+  width: 270px;
+  padding: 20px 20px;
+  background: $white-color !important;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,60 @@
+.company-dashboard {
+  position: relative;
+
+  .objective-name,
+  .measure-name,
+  .department-name {
+    font-weight: $font-weight-semibold;
+  }
+
+  .score {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .sub-heading {
+      display: block;
+      text-align: left;
+    }
+
+    .rating-container {
+      margin: auto;
+    }
+
+    .complex-score {
+      width: 100px !important;
+      height: 100px !important;
+
+      .circle {
+        .mask {
+          clip: rect(0px, 100px, 100px, 50px) !important;
+          width: 100px !important;
+          height: 100px !important;
+        }
+
+        .fill {
+          clip: rect(0px, 50px, 100px, 0px) !important;
+          width: 100px !important;
+          height: 100px !important;
+        }
+      }
+
+      .inside-circle {
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .kpi-chart {
+    border: 1px solid transparent;
+    height: clamp(500px, 60vmin, 70vh);
+    transition: border-color 0.5s ease;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+}

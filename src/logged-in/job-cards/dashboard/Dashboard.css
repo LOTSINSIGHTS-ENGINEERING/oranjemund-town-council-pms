@@ -1,0 +1,58 @@
+
+.deduction {
+  button {
+    margin-top: 10px;
+    height: 30px;
+  }
+
+  margin-bottom: 10px;
+
+  &__reconciled {
+    border-left: 5px solid #00ff00; 
+  }
+
+  &__not-reconciled {
+    border-left: 5px solid #ff0000;
+  }
+
+  .employer-name {
+    font-family: 'Open Sans', 'Sans-serif';
+    color: #0000ff; 
+    font-weight: 900;
+  }
+
+  .executed {
+    margin: 0px 10px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 360px;
+    width: 5px !important;
+    height: 50px;
+    background-color: #ffcc00; 
+    color: #ffffff; 
+  }
+
+  .reconciled {
+    margin: 0px 10px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 10px;
+    height: 50px;
+    border-radius: 360px;
+    width: 50px !important;
+    background-color: #00ff00; 
+    color: #ffffff; 
+  }
+
+  .issues {
+    font-weight: 800;
+    text-align: center;
+    padding-top: 10px;
+    height: 50px;
+    border-radius: 360px;
+    width: 50px;
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+}

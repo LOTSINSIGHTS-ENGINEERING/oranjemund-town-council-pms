@@ -1,0 +1,111 @@
+@import "../styles/Variables.scss";
+
+.app {
+  .section-toolbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &>* {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      font-weight: $font-weight-bold;
+    }
+
+    .controls {
+      &>* {
+        border-radius: $border-radius;
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (min-width: 640px) {
+      flex-direction: row;
+      align-items: center;
+
+      * {
+        margin-bottom: 0.5em !important;
+      }
+
+      .controls {
+
+        &>*,
+        button {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+
+  // Bad Practive | Quick fix
+  .objective-name {
+    .objective-persepctive {
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      color: $white-color;
+      background-color: $primary-color;
+      padding: 3px 5px;
+      line-height: 1;
+      width: fit-content;
+    }
+  }
+
+  // // Bad Practive | Quick fix
+  div.measure-table {
+    margin: -10px;
+    padding: 10px;
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0 5px;
+      margin: 0;
+
+      .kit-sticky-column {
+        position: sticky;
+        left: -10px;
+        background: $white-color;
+      }
+
+      thead {
+        th {
+          padding-bottom: 5px;
+          padding-top: 5px;
+        }
+      }
+
+      tbody {
+        tr {
+          background: $white-color;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        tr.kit-sticky-column {
+          background: $white-color;
+        }
+      }
+    }
+  }
+}
+
+// Bad Practive | Quick fix
+.grey {
+  background-color: $grey-color !important;
+}
+
+.purple {
+  background-color: $purple-color !important;
+}
+
+.blue {
+  background-color: $blue-color !important;
+}
+
+.green {
+  background-color: $green-color !important;
+}
+
+.red {
+  background-color: $red-color !important;
+}

@@ -1,0 +1,50 @@
+/* RecentJobCards.css */
+
+.white-background {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.job-cards-container {
+  display: flex;
+  gap: 16px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.job-card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  min-width: 200px;
+  max-height: 300px; /* Adjust this value as needed to fit the content */
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  transition: background-color 0.3s ease;
+}
+
+.job-card:hover {
+  background-color: #fff;
+}
+
+.button-container {
+  text-align: right;
+}
+
+.acknowledge-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acknowledge-button:hover {
+  background-color: #0056b3;
+}

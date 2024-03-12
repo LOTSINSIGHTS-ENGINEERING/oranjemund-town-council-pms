@@ -1,0 +1,11 @@
+.kit-table {
+  th {
+    text-transform: none;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+  }
+
+  td {
+    font-size: $font-size;
+  }
+}

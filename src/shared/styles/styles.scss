@@ -1,0 +1,88 @@
+@import "./Variables.scss";
+@import"./App.scss";
+@import"./index.scss";
+
+// dashboards
+@import"./dashboard/Dashboard.scss";
+@import"./dashboard/CompanyDashboard.scss";
+@import"./dashboard/DeparmentDashboard.scss";
+@import"./dashboard/IndividualDashboard.scss";
+// @import"./dashboard/JobCardDashBoard.scss";
+
+// kit
+@import"./kit/Accordion-Kit.scss";
+@import"./kit/Buttons-Kit.scss";
+@import"./kit/Card-Kit.scss";
+@import"./kit/Dropdown-Kit.scss";
+@import"./kit/Headings-Kit.scss";
+@import"./kit/Modals-Kit.scss";
+@import"./kit/Table-Kit.scss";
+@import"./kit/Tabs-Kit.scss";
+
+// logout
+@import"./logout/LoggedOut.scss";
+
+// main
+@import"./main/Drawer.scss";
+@import"./main/Main.scss";
+@import"./main/Navbar.scss";
+
+// modals
+@import"./modals/CompanyScorecardDraftApprovalModal.scss";
+@import"./modals/CompanyScorecardQ4RejectionModal.scss";
+@import"./modals/CompanyStrategicMapOverview.scss";
+@import"./modals/MeasureStatusUpdateDepartmentModal.scss";
+@import"./modals/MeasureStatusUpdateDepartmentModal.scss";
+@import"./modals/MeasureUpdateModal.scss";
+@import"./modals/ObjectiveCompanyModal.scss";
+@import"./modals/ObjectiveModal.scss";
+@import"./modals/PerformanceReviewModal.scss";
+@import"./modals/ScorecardModal.scss";
+@import"./modals/StrategicMapOverview.scss";
+
+// reports
+@import"./reports/Reports.scss";
+
+// scorecards
+@import"./scorecards/CompanyScorecard.scss";
+@import"./scorecards/CompanyScorecardObjective.scss";
+@import"./scorecards/CompanyScorecardReviews.scss";
+@import"./scorecards/CompanyScorecards.scss";
+@import"./scorecards/DepartmentScorecard.scss";
+@import"./scorecards/DepartmentScorecardObjective.scss";
+@import"./scorecards/DepartmentScorecardReviewView.scss";
+@import"./scorecards/DepartmentScorecards.scss";
+@import"./scorecards/Drive.scss";
+@import"./scorecards/EmployeeScorecard.scss";
+@import"./scorecards/EmployeeScorecardView.scss";
+@import"./scorecards/IndividualScorecard.scss";
+@import"./scorecards/IndividualScorecardObjective.scss";
+@import"./scorecards/People.scss";
+@import"./scorecards/PeopleView.scss";
+@import"./scorecards/PerformanceReviews.scss";
+@import"./scorecards/StrategicMap.scss";
+// @import"./scorecards/StrategyMap.scss";
+
+// settings
+@import"./settings/AdminSettings.scss";
+
+// shared
+@import"./shared/Accordion.scss";
+@import"./shared/Alert.scss";
+@import"./shared/AutoSaveInput.scss";
+@import"./shared/ContextMenu.scss";
+@import"./shared/Error.scss";
+@import"./shared/FormFieldInfo.scss";
+@import"./shared/Graphs.scss";
+@import"./shared/Loader.scss";
+@import"./shared/NumberInput.scss";
+@import"./shared/Rating.scss";
+@import"./shared/SelectInput.scss";
+@import"./shared/SingleSelect.scss";
+@import"./shared/Snackbar.scss";
+@import"./shared/StrategyTabContent.scss";
+@import"./shared/Tabs.scss";
+@import"./shared/Toolbar.scss";
+
+// strategy themes
+@import"./themes/StrategyThemes.scss";

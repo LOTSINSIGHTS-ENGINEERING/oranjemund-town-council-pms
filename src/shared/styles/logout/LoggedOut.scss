@@ -1,0 +1,83 @@
+.logged-out {
+  height: 100vh;
+  background: $primary-color 40%;
+
+  .login {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $white-color;
+    border-radius: $border-radius;
+    // position: absolute;
+    // width: clamp(480px, 100%, 580px);
+    // top: 50%;
+    // transform: translateY(-50%);
+    // right: 20px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    // overflow: hidden;
+    // background-color: $white-color;
+    // transition: 0.3s all ease;
+    // border-radius: 2.5px;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .icon-button {
+      border: none;
+      background: transparent;
+
+      svg {
+        margin-top: 25px;
+        cursor: pointer;
+      }
+    }
+
+    .controls {
+      display: flex;
+
+      .uk-button {
+        background-color: $primary-color;
+        color: $white-color;
+        font-weight: $font-weight-semibold;
+        border-radius: $border-radius;
+        text-transform: none;
+
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+      }
+    }
+  }
+}
+
+.forgot-password {
+  .uk-button {
+    background-color: $primary-color;
+    color: $white-color;
+    font-weight: $font-weight-semibold;
+    border-radius: $border-radius;
+    text-transform: none;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}

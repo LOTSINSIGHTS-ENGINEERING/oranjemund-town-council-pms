@@ -1,0 +1,35 @@
+ul.kit-tabs {
+  margin: 0;
+
+  &::before {
+    content: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+
+    &.uk-active {
+      a {
+        color: $white-color;
+        background-color: $primary-color;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    a {
+      border-radius: $border-radius;
+      font-size: $font-size;
+      font-weight: $font-weight-semibold;
+      background-color: $muted-color;
+      color: $grey-color;
+      text-transform: capitalize;
+      border: 0;
+      transition: 0.3s all ease;
+    }
+  }
+}

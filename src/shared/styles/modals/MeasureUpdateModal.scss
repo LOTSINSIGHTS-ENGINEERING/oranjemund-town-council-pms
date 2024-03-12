@@ -1,0 +1,67 @@
+.measure-update-modal {
+  #hidden-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+
+    input {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .field-info {
+    display: inline-block;
+    position: relative;
+
+    .icon {
+      color: $light-grey-color !important;
+      transition: 0.3s all ease;
+      cursor: pointer;
+
+      &:hover {
+        color: $black-color !important;
+      }
+    }
+
+    &:hover {
+      .description {
+        display: block;
+      }
+    }
+
+    .description {
+      &::before {
+        content: "Description";
+        display: block;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semibold;
+        color: $dark-grey-color;
+        text-transform: uppercase;
+      }
+
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      margin: 0;
+      font-size: $font-size-sm;
+      background-color: $hover-color;
+      color: $dark-grey-color;
+      padding: 10px;
+      width: clamp(100px, 50vmin, 350px);
+      box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.1);
+      pointer-events: none;
+    }
+
+    &.align-center .description {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

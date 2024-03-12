@@ -1,0 +1,45 @@
+.measure-status-update-modal {
+  .comment-title {
+    color: $grey-color;
+  }
+
+  .characters-left {
+    font-size: $font-size;
+    font-weight: $font-weight-semibold;
+    color: $danger-color;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  textarea {
+    transition: border-color 0.3s ease;
+  }
+
+  .characters-limit-hit {
+    border-color: $danger-color;
+    background-color: rgba($danger-color, 0.05);
+  }
+}
+
+.measure-comments-modal {
+  .comment-title {
+    color: $grey-color;
+  }
+
+  .characters-left {
+    font-size: $font-size;
+    font-weight: $font-weight-semibold;
+    color: $danger-color;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  textarea {
+    transition: border-color 0.3s ease;
+  }
+
+  .characters-limit-hit {
+    border-color: $danger-color;
+    background-color: rgba($danger-color, 0.05);
+  }
+}

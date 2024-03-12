@@ -1,0 +1,44 @@
+.graph-comp {
+    height: calc(100% - 10px);
+
+    .title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .wrapper {
+        height: calc(100% - 20px);
+    }
+}
+
+
+.line-graph {
+    height: calc(100% - 20px);
+
+    .wrapper {
+        height: 100%;
+    }
+}
+
+.pie-chart {
+    height: 100%;
+
+    .title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        canvas {
+            height: 100% !important;
+            width: auto !important;
+        }
+    }
+}

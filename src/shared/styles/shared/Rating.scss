@@ -1,0 +1,149 @@
+@import "../../styles/Variables.scss";
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-rating {
+  display: flex;
+  justify-items: center;
+  align-items: flex-end;
+  height: 50px;
+
+  &__bar {
+    width: 15px;
+    background-color: $muted-color;
+    margin: 0 2px;
+  }
+  .rating-1 {
+    height: 20%;
+    &.active {
+      background-color: $red-color;
+    }
+  }
+  .rating-2 {
+    height: 40%;
+    &.active {
+      background-color: $warning-color;
+    }
+  }
+  .rating-3 {
+    height: 60%;
+    &.active {
+      background-color: $green-color;
+    }
+  }
+  .rating-4 {
+    height: 80%;
+    &.active {
+      background-color: $blue-color;
+    }
+  }
+  .rating-5 {
+    height: 100%;
+    &.active {
+      background-color: $purple-color;
+    }
+  }
+}
+
+.simple-score {
+  position: relative;
+  color: $white-color;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  width: 34px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  &.red {
+    background-color: $danger-color !important;
+  }
+  &.warning {
+    background-color: $warning-color !important;
+  }
+  &.green {
+    background-color: $success-color !important;
+  }
+}
+
+.complex-score {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 50px;
+  height: 50px;
+  background: $muted-color;
+  border-radius: 50%;
+  &.red {
+    .fill {
+      background-color: $danger-color !important;
+    }
+    .inside-circle {
+      color: $danger-color !important;
+    }
+  }
+  &.warning {
+    .fill {
+      background-color: $warning-color !important;
+    }
+    .inside-circle {
+      color: $warning-color !important;
+    }
+  }
+  &.green {
+    .fill {
+      background-color: $success-color !important;
+    }
+    .inside-circle {
+      color: $success-color !important;
+    }
+  }
+
+  .circle {
+    .mask {
+      clip: rect(0px, 50px, 50px, 25px);
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+
+      &.full {
+        transform: rotate(0deg);
+        transition: all 1s ease-in-out;
+      }
+
+      /* 3rd progress bar */
+      .fill {
+        clip: rect(0px, 25px, 50px, 0px);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: $warning-color;
+
+        // animation
+        transform: rotate(0deg);
+        transition: all 1s ease-in-out;
+      }
+    }
+
+    .inside-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $white-color;
+      line-height: 40px;
+      text-align: center;
+      margin-top: 5px;
+      margin-left: 5px;
+      color: $warning-color;
+      position: absolute;
+      z-index: 0;
+      font-weight: 700;
+      font-size: $font-size;
+    }
+  }
+}

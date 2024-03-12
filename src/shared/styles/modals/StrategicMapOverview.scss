@@ -1,0 +1,106 @@
+@import "../../../shared/styles/Variables.scss";
+
+.strategic-map-objective {
+  .sub-heading {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+  }
+
+  .strategic-map-overview {
+    .grid {
+      display: flex;
+      justify-content: stretch;
+
+      .score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+        margin-left: 10px;
+        .sub-heading {
+          display: block;
+          text-align: left;
+        }
+
+        .rating-container {
+          margin: auto;
+        }
+
+        .complex-score {
+          width: 100px !important;
+          height: 100px !important;
+          .circle {
+            .mask {
+              clip: rect(0px, 100px, 100px, 50px) !important;
+              width: 100px !important;
+              height: 100px !important;
+            }
+            .fill {
+              clip: rect(0px, 50px, 100px, 0px) !important;
+              width: 100px !important;
+              height: 100px !important;
+            }
+          }
+          .inside-circle {
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .strategic-map-audit {
+  }
+
+  .kpis-table {
+    th {
+      font-weight: $font-weight-semibold;
+      font-size: $font-size;
+      text-transform: capitalize;
+      padding: 5px 8px;
+    }
+    td {
+      font-size: $font-size;
+      padding: 5px 8px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &.kpi-name,
+      &.kpi-owner {
+        font-weight: $font-weight-semibold;
+      }
+      &.kpi-actual {
+        font-weight: $font-weight-semibold;
+        white-space: nowrap;
+        .red {
+          color: $danger-color;
+        }
+        .green {
+          color: $success-color;
+        }
+        .warning {
+          color: $warning-color;
+        }
+      }
+      &.kpi-target {
+        font-weight: $font-weight-semibold;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .kpi-change {
+    background-color: $muted-color;
+  }
+  .kpi-change-table {
+    .status.green {
+      background-color: $success-color;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+  }
+}

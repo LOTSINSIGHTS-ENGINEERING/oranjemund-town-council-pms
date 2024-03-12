@@ -1,0 +1,17 @@
+.alert {
+  width: 100%;
+
+  p {
+    margin: 0;
+  }
+
+  .close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    color: inherit;
+    opacity: 0.4;
+    background-color: transparent;
+  }
+}

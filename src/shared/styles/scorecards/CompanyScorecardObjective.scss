@@ -1,0 +1,57 @@
+.objective-page {
+  .measure-table {
+    overflow-y: auto;
+
+    .header {
+      th {
+        font-weight: $font-weight-semibold;
+        text-transform: none;
+        white-space: nowrap;
+      }
+    }
+
+    .row {
+      cursor: pointer;
+
+      td {
+        font-size: $font-size;
+      }
+      .controls {
+        white-space: nowrap;
+      }
+      .status {
+        height: 10px;
+        width: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+      .red {
+        background-color: $danger-color;
+      }
+      .warning {
+        background-color: $warning-color;
+      }
+      .green {
+        background-color: $success-color;
+      }
+
+      .actual-value {
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+
+  .no-measures {
+    padding: 1em;
+    p {
+      font-size: 1.1rem;
+      line-height: 0.5em;
+      margin: 0;
+      color: $grey-color;
+      span {
+        font-style: normal;
+      }
+    }
+  }
+}

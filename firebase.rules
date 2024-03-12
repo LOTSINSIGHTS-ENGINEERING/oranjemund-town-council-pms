@@ -1,0 +1,275 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	function isLoggedIn() {
+      return request.auth != null;
+    }
+    
+  	// USERS COLLECTION    
+    match /users/{userId} {
+    	// Allow client to read personal userDoc
+    	allow read: if isLoggedIn();
+      allow write: if isLoggedIn();
+      allow delete: if isLoggedIn();
+    }
+    
+  	// COMPANIES COLLECTION
+  	match /companies/{companyId} {
+    	allow read, write: if isLoggedIn();
+      
+      // SCORECARDS COLLECTION
+      match /scorecards/{scorecardId} {
+      	// get scorecard data
+      	function scorecard() {
+          return get(/databases/$(database)/documents/companies/$(companyId)/scorecards/$(scorecardId))
+          	.data
+        }
+      
+        // Allow read for loggedIn users
+      	allow read: if isLoggedIn();
+      	// Allow update if not locked scorecard.
+      	allow update: if isLoggedIn();
+        // Allow delete for admin users
+      	allow delete: if isLoggedIn();
+        
+        // SCORECARDS METADATA COLLECTION
+        match /scorecardMetadata/{individualScorecardId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // SCORECARD DRAFTS REVIEWS COLLECTION
+        match /scorecardDraftReviews/{reviewId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // SCORECARD QUARTER1 REVIEWS COLLECTION
+        match /scorecardQuarter1Reviews/{reviewId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // SCORECARD QUARTER2 REVIEWS COLLECTION
+        match /scorecardQuarter2Reviews/{reviewId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // SCORECARD QUARTER3 REVIEWS COLLECTION
+        match /scorecardQuarter3Reviews/{reviewId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // SCORECARD QUARTER4 REVIEWS COLLECTION
+        match /scorecardQuarter4Reviews/{reviewId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // STRATEGIC THEMES COLLECTION
+        match /strategicThemes/{themeId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+        
+        // OBJECTIVES COLLECTION
+        match /objectives/{objectiveId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+      	 
+      	// MEASURES COLLECTION
+        match /measures/{measureId} {
+        	// When scorecard is locked or inactive, only update actual, rating & comments
+        	function updateActualRatingAndCommentsOnly() {
+            return (request.resource.data.diff(resource.data)
+            	.affectedKeys().hasOnly(['actual', 'rating', 'comments']));
+          }
+          
+          // Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create measure only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && scorecard().active && isLoggedIn();
+          // Allow update measures of only the actual, rating & comments when scorecard is locked
+          allow update: if (!scorecard().locked || updateActualRatingAndCommentsOnly()) && isLoggedIn();
+          // Allow delete only if scorecards is not locked & user is loggedIn
+          allow delete: if !scorecard().locked && scorecard().active && isLoggedIn();
+        }
+        
+        // MEASURES-AUDIT COLLECTION
+        match /measuresAudit/{measureId} {          
+          // Allow read, write, delete for loggedIn users
+        	allow read, write, delete: if isLoggedIn();
+        }
+        
+        // COMPANY-OBJECTIVES COLLECTION
+        match /companyObjectives/{objectiveId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+      	 
+      	// COMPANY-MEASURES COLLECTION
+        match /companyMeasures/{measureId} {
+        	// When scorecard is locked or inactive, only update actual, rating & comments
+        	function updateActualRatingAndCommentsOnly() {
+            return (request.resource.data.diff(resource.data)
+            	.affectedKeys().hasOnly(['actual', 'rating', 'comments']));
+          }
+          
+          // Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create measure only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && scorecard().active && isLoggedIn();
+          // Allow update measures of only the actual, rating & comments when scorecard is locked
+          allow update: if (!scorecard().locked || updateActualRatingAndCommentsOnly()) && isLoggedIn();
+          // Allow delete only if scorecards is not locked & user is loggedIn
+          allow delete: if !scorecard().locked && scorecard().active && isLoggedIn();
+        }
+        
+        // COMPANY-MEASURES-AUDIT COLLECTION
+        match /companyMeasuresAudit/{measureId} {          
+          // Allow read, write, delete for loggedIn users
+        	allow read, write, delete: if isLoggedIn();
+        }
+        
+        //SCORECARD ARCHIVES COLLECTION
+        match /scorecardArchives/{archiveId} {          
+          // Allow read, write, delete for loggedIn users
+        	allow read, write, delete: if isLoggedIn();
+        }
+        
+        // DEPARTMENT-OBJECTIVES COLLECTION
+        match /departmentObjectives/{objectiveId} {
+        	// Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create objectives only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && isLoggedIn();
+          // Cannot update objectives
+          allow update: if !scorecard().locked && isLoggedIn();
+          // Removing objectives not allowed for locked scorecards.
+          allow delete: if !scorecard().locked && isLoggedIn();
+        }
+    
+      	 
+      	// DEPARTMENT-MEASURES COLLECTION
+        match /departmentMeasures/{measureId} {
+        	// When scorecard is locked or inactive, only update actual, rating & comments
+        	function updateActualRatingAndCommentsOnly() {
+            return (request.resource.data.diff(resource.data)
+            	.affectedKeys().hasOnly(['actual', 'rating', 'comments']));
+          }
+          
+          // Allow read for loggedIn users
+        	allow read: if isLoggedIn();
+        	// Create measure only when scorecard is not locked && isActive
+        	allow create: if !scorecard().locked && scorecard().active && isLoggedIn();
+          // Allow update measures of only the actual, rating & comments when scorecard is locked
+          allow update: if (!scorecard().locked || updateActualRatingAndCommentsOnly()) && isLoggedIn();
+          // Allow delete only if scorecards is not locked & user is loggedIn
+          allow delete: if !scorecard().locked && scorecard().active && isLoggedIn();
+        }
+        
+        // DEPARTMENT-MEASURES-AUDIT COLLECTION
+        match /departmentMeasuresAudit/{measureId} {          
+          // Allow read, write, delete for loggedIn users
+        	allow read, write, delete: if isLoggedIn();
+        }
+      }
+      
+      // DEPARTMENTS COLLECTION    
+      match /departments/{departmentId} {
+        // Allow client to read, write & delete if loggedIn
+        allow read, write, delete: if isLoggedIn();
+      }
+      
+      // BUSINESS UNITS COLLECTION    
+      match /businessUnits/{businessUnitId} {
+        // Allow client to read, write & delete if loggedIn
+        allow read, write, delete: if isLoggedIn();
+      }
+       // VISION, MISSION COLLECTION    
+      match /visionMission/{visionMissionId} {
+        // Allow client to read, write & delete if loggedIn
+        allow read, write, delete: if isLoggedIn();
+      }
+      
+      // PROJECTS COLLECTION    
+      match /projects/{projectId} {
+        // Allow client to read, write & delete if loggedIn
+        allow read, write, delete: if isLoggedIn();
+      }
+      
+      // FOLDERS COLLECTION    
+      match /folders/{folderId} {
+        // Allow client to read, write & delete if loggedIn
+        allow read, write, delete: if isLoggedIn();
+      }
+      
+      // FOLDER-FILES COLLECTION    
+      match /folderFiles/{fileId} {
+        // Allow client to read, write & delete if loggedIn
+        allow read, write, delete: if isLoggedIn();
+      }
+    }
+    
+    match /{document=**} {
+      allow read, write, delete: if false;
+    }
+  }
+}

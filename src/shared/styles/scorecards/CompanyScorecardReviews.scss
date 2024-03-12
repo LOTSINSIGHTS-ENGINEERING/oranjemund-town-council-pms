@@ -1,0 +1,63 @@
+.company-plan-page {
+  .FY-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6em 0.8em;
+
+    .title {
+      font-size: $font-size-md;
+      color: $black-color;
+      margin: 0;
+    }
+
+    &__locked {
+      background-color: #f8f8f8 !important;
+
+      .title {
+        display: flex;
+        justify-items: center;
+
+        span {
+          font-size: $font-size-xs;
+          text-transform: uppercase;
+          color: $grey-color;
+        }
+      }
+    }
+  }
+
+  .company-scorecard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+    border: 0;
+    margin: 0;
+    border-top: 1px solid $dark-muted-color;
+    background-color: $white-color;
+    transition: 0.3s ease-in-out all;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    .span-label {
+      display: block;
+      font-size: $font-size-xs;
+      color: $secondary-color;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+      transition: 0.3s ease-in-out all;
+    }
+
+    h6,
+    p {
+      font-weight: $font-weight-semibold;
+      text-transform: capitalize;
+      color: $dark-grey-color;
+      margin: 0;
+    }
+  }
+}

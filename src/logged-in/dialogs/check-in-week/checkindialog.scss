@@ -1,0 +1,100 @@
+@import "../../../shared/styles/Variables.scss";
+.week-modal,
+.week-task-modal {
+    font-family: 'Calibri', sans-serif;
+    font-size: 11pt;
+    color: #1f497d;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+
+    h3 {
+        font-size: 14pt;
+        font-weight: 600;
+        color: #1f497d;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        border: 1px solid #ddd;
+        padding: 6px;
+        font-size: 11pt;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+        outline: none;
+        border-color: #1f497d;
+    }
+
+    .uk-form-controls {
+        margin-top: 5px;
+    }
+
+    .uk-modal-close-default {
+        color: #aaa;
+    }
+
+
+    .single-select {
+        min-width: 250px;
+        font-size: 0.89rem;
+        border: 0;
+
+        .select__control {
+            min-height: 30px; // TODO: make this dynamic
+            border-radius: 0;
+
+            &.select__control--is-focused {
+                border-color: #1e87f0 !important;
+                box-shadow: none;
+            }
+        }
+
+        .select__option {
+            padding-top: 1px;
+            padding-bottom: 1px;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: #555;
+                color: $white-color;
+            }
+
+            &--is-disabled {
+                margin-top: 5px;
+                color: #172b4d !important;
+                font-size: $font-size-xs;
+                font-weight: $font-weight-bold;
+                background-color: transparent !important;
+            }
+        }
+
+        .grouped-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .grouped-badge {
+                display: inline-block;
+                background-color: #ebecf0;
+                color: #172b4d;
+                font-size: $font-size-sm;
+                font-weight: $font-weight;
+                line-height: 1;
+                min-width: 1;
+                padding: 0.15em 0.5em;
+                border-radius: 1em;
+                text-align: center;
+            }
+        }
+    }
+}

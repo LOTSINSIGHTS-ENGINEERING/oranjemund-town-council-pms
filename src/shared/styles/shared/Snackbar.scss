@@ -1,0 +1,76 @@
+.snackbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: visible;
+  min-width: 300px;
+  text-align: center;
+  border-radius: $border-radius;
+  z-index: 1000;
+  bottom: 30px;
+  background-color: $success-color;
+  color: $white-color;
+  padding: 0.5em 0.8em;
+  font-size: $font-size-sm;
+  font-weight: $font-weight;
+  visibility: visible !important;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+
+  &.default {
+    background-color: $black-color;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &.primary {
+    background-color: $secondary-color;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &.success {
+    background-color: $success-color;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &.warning {
+    background-color: $warning-color;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  &.danger {
+    background-color: $danger-color;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  .content {
+    width: clamp(300px, 30vmin, 400px);
+    text-align: left;
+  }
+
+  .undo-btn {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    color: $white-color;
+    font-weight: $font-weight-semibold;
+    margin-left: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .close-btn {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    color: $white-color;
+    margin-left: 4px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

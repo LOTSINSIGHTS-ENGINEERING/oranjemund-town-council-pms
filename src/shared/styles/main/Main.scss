@@ -1,0 +1,30 @@
+.responsive-drawer {
+  display: flex;
+  height: 100vh;
+
+  .drawer {
+    position: fixed;
+    z-index: 981;
+
+    width: $drawer-width;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+  }
+
+  .main-layout {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: $muted-color;
+
+    @media only screen and (min-width: 640px) {
+      margin-left: $drawer-width;
+    }
+  }
+}

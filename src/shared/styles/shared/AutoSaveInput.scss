@@ -1,0 +1,42 @@
+.auto-save {
+  &__outlined {
+    border: 2px solid $primary-color !important;
+    background-color: $white-color !important;
+    color: $black-color !important;
+  }
+
+  &__input {
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s border ease, 0.3s background-color ease,
+      0.3s min-width ease, 0.3s color ease;
+    text-overflow: ellipsis;
+    padding: 2px 5px !important;
+    min-height: auto !important;
+
+    border: 1px solid $primary-color;
+    background-color: $white-color;
+    color: $black-color;
+
+    &:focus,
+    &:hover,
+    &:active {
+      border: 2px solid $primary-color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      border: 1px solid transparent;
+      color: inherit;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border: 1px solid $light-grey-color;
+        background-color: $muted-color;
+        color: $black-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .controls {
+    display: flex;
+
+    @media screen and (max-width: 430px) {
+      display: flex;
+      justify-content: space-between;
+
+      &.mg-top {
+        margin-top: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.admin-settings {
+  position: relative;
+
+  .sticky-top {
+    position: sticky;
+    top: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 100;
+    background-color: $muted-color;
+
+    .kit-tabs {
+      margin-bottom: 0px !important;
+    }
+  }
+
+  .user,
+  .batch,
+  .business-unit,
+  .department {
+    border-radius: 1.5px;
+    border-bottom: 1px solid $dark-muted-color;
+    margin: 0;
+    background-color: $white-color;
+    cursor: pointer;
+    border: 2px solid #fafafa;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    padding: 8px;
+
+    &:hover {
+      border: 2px solid $primary-color;
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .span-label {
+      display: block;
+      font-size: $font-size-xs;
+      color: $secondary-color;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+      transition: 0.3s ease-in-out all;
+    }
+
+    h6,
+    p {
+      font-weight: $font-weight-semibold;
+      text-transform: capitalize;
+      color: $dark-grey-color;
+      font-size: $font-size;
+    }
+  }
+
+  .user {
+    &__not-verified {
+      border-left: 3px solid $danger-color;
+    }
+  }
+
+  .batch {
+    &.active {
+      border-left: 3px solid $primary-color;
+    }
+
+    .lock-status {
+      text-transform: none !important;
+    }
+  }
+
+  .empty-error {
+    padding: 1em;
+
+    p {
+      font-size: $font-size;
+      line-height: 0.5em;
+      margin: 0;
+      color: $grey-color;
+
+      span {
+        font-style: normal;
+      }
+    }
+  }
+}

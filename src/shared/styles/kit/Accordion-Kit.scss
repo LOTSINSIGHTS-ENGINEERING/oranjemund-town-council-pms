@@ -1,0 +1,51 @@
+.kit-accordion-item {
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+
+  &.expanded {
+    .accordion-header {
+      background-color: $muted-color;
+    }
+
+    .icon {
+      color: $primary-color;
+      transform: rotate(45deg);
+    }
+  }
+
+  .accordion-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $muted-color;
+    transition: 0.3s all ease-in-out;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0.8em;
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .expand-btn {
+      height: 100%;
+      background-color: $muted-color;
+      align-items: center;
+
+      .icon {
+        transition: 0.3s all ease-in-out;
+        color: $black-color;
+      }
+    }
+
+    .title {
+      font-size: $font-size;
+      font-weight: $font-weight-semibold;
+      transition: 0.3s all ease-in-out;
+      margin: 0;
+      margin-left: 15px;
+    }
+  }
+}

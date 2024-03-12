@@ -1,0 +1,96 @@
+.kit-accordion {
+  .kit-accordion-item {
+    border-radius: 0;
+    background-color: $white-color;
+    border-bottom: 1px solid $muted-color;
+    margin: 0;
+    overflow: hidden;
+
+    box-shadow: 0px 0px 5px rgba($color: $black-color, $alpha: 0.1);
+
+    &.expanded {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .content {
+        margin-top: 5px !important;
+      }
+    }
+
+    .title {
+      position: relative;
+      font-size: $font-size;
+      font-weight: $font-weight-semibold;
+      line-height: 1;
+
+      .title-label {
+        display: block;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        color: $secondary-color;
+        line-height: 1;
+        margin-bottom: 2px;
+      }
+    }
+
+    .content {
+      transition: 0.3s ease-in-out all;
+    }
+
+    .controls {
+      white-space: nowrap;
+    }
+  }
+}
+
+.custom-made-accordion {
+  background: $white-color;
+  box-shadow: 0px 0px 5px rgba($color: $black-color, $alpha: 0.1);
+  padding: 0.6em 0.8em;
+  border: 2px solid #fafafa;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    border: 2px solid $primary-color;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  .position-relative {
+    position: relative;
+    cursor: pointer;
+    .custom-title {
+      display: flex;
+      justify-items: center;
+      font-size: $font-size-md;
+      color: $black-color;
+      margin: 4px;
+      span {
+        font-size: $font-size-xs;
+        text-transform: uppercase;
+        color: $grey-color;
+      }
+    }
+    .more {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+      .icon {
+        color: $primary-color;
+        transition: all 0.3s ease-in-out;
+        padding: 1.5px;
+        border-radius: 1px;
+        &.expanded {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .custom-accordion {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+    overflow-y: auto;
+    &.expanded {
+      max-height: 600px;
+    }
+  }
+}

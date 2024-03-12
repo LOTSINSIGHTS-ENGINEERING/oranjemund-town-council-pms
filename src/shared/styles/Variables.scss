@@ -1,0 +1,63 @@
+$button-border-radius: 0.5em;
+
+$font-size-xs: 0.7em;
+$font-size-sm: 0.75rem;
+$font-size: 0.8rem;
+$font-size-md: 1.02rem;
+$font-size-lg: 1.2rem;
+$font-size-xl: 1.4rem;
+$font-size-xxl: 1.6rem;
+$font-size-xxxl: 2rem;
+
+// Font sizes
+$title: $font-size-xxxl;
+$subtitle: $font-size-xl;
+
+$font-weight: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+
+// Margins
+$margin: 0.5em;
+$margin-1: 5em;
+$margin-2: 7em;
+
+// Colors
+$primary-color: #4154a4;
+$accent-color: #ec2027;
+$secondary-color: #231f20;
+
+$darker-secondary-color: #35508b;
+$grey-color: #a9a9ab;
+$dark-grey-color: #666;
+$light-grey-color: #ccc;
+$black-color: #000;
+$white-color: #fff;
+$muted-color: #f0f0f0;
+$dark-muted-color: #e8e8e8;
+$light-bg: #efefef;
+$hover-color: #ffffdd;
+
+// Button colors
+$secondary-btn: #2f80ed;
+$secondary-btn-hover: #35508b;
+$danger-btn: #e41f25;
+$danger-btn-hover: #de2227;
+
+$success-color: #4bb543;
+$danger-color: #dc3545;
+$warning-color: #faa05a;
+$hover-color: #ffd;
+
+// rating colors
+$blue-color: #2f80ed;
+$green-color: #4bb543;
+$purple-color: #9b59b6;
+$red-color: #dc3545;
+
+// Border radius
+$border-radius: 2.5px;
+$border-radius-lg: 5px;
+
+// Drawer size
+$drawer-width: 220px;
