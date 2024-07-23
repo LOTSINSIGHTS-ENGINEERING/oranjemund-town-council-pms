@@ -27,7 +27,8 @@ const StrategicThemeModal = observer(() => {
     const theTheme = theme;
 
     const selected = store.strategicTheme.selected;
-
+      console.log("theme",theTheme);
+      
     if (selected) await update(theTheme);
     else {
       await create(theTheme);
